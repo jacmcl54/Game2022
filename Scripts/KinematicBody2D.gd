@@ -22,7 +22,7 @@ func _process(delta):
 		
 	if!(Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")):
 		motion.x = 0
-	
+		motion.x = 0
 	
 	motion = move_and_slide(motion)
 	
