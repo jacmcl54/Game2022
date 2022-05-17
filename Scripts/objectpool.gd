@@ -16,13 +16,13 @@ func _process(delta):
 
 func _get_full_paths(path: String) -> Array:
 	if path.ends_with('.tscn'):
-		return [path]
+		return[path]
 		
 	var files = _list_files_in_directory(path)
 	var paths = []
 	for file in files:
 		paths.append(path + file)
-		return paths 
+		return paths
 
 func _list_files_directory(path: String) -> Array:
 	var files: Array = []
