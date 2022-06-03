@@ -19,5 +19,9 @@ func _ready():
 #	pass
 "
 
-[node name="player" type="Node2D"]
+[node name="player" type="KinematicBody2D"]
 script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

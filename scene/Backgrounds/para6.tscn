@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/Backgrounds/ScrollingBackground.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/sky_fc.png" type="Texture" id=2]
+[ext_resource path="res://assets/Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_front_t_fc.png" type="Texture" id=2]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -18,11 +18,13 @@ void fragment(){
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
 shader = SubResource( 1 )
-shader_param/scroll_speed = 0.0
+shader_param/scroll_speed = 0.35
 
-[node name="Para1" type="Node2D"]
+[node name="para6" type="Node2D"]
 
 [node name="ScrollingBackground" parent="." instance=ExtResource( 1 )]
 material = SubResource( 2 )
+margin_right = 384.0
+margin_bottom = 216.0
 rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
