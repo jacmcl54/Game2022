@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://bgfg/background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bgfg/foreground.tscn" type="PackedScene" id=2]
@@ -8,11 +8,11 @@
 [ext_resource path="res://scene/Backgrounds/para4.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/Backgrounds/para6.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scene/Backgrounds/Para5.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=9]
 
 [node name="game" type="Node2D"]
 
 [node name="background" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="Para1" parent="." instance=ExtResource( 5 )]
 
@@ -28,3 +28,6 @@ visible = false
 
 [node name="foreground" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3, 559 )
+
+[node name="player" parent="." instance=ExtResource( 9 )]
+position = Vector2( -26, 567 )
