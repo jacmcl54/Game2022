@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Fly Agaric Mushroom Amanita muscaria.png" type="Texture" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -21,3 +23,6 @@ func _ready():
 
 [node name="Obstacle" type="Node2D"]
 script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

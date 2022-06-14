@@ -10,37 +10,45 @@ var velocity = Vector2.ZERO
 export var jump_velcoity = 600
 export var gravity_scale = 20
 
-var can_jump = true 
+enum {
+	JUMP,
+	RUN,
+	IDLE
+}
+
+var state = RUN
+
 
 onready var animation = $AnimationPlayer
 
-
-
-func _ready():
-	animation.play(\"run\")
 	
 func _physics_process(delta):
+	match state:
+		RUN:
+			animation.play(\"run\")
+		JUMP:
+			velocity = Vector2.ZERO
+			velocity.y -= jump_velcoity
+			animation.play(\"Jump\")
+			state = IDLE
+		IDLE:
+			pass
+	
 	velocity.y += gravity_scale
 	move_and_collide(velocity*delta)
 	
 func _input(event):
-	if can_jump:
-		velocity = Vector2.ZERO
+	if state == RUN:
 		if event.is_action_pressed(\"Jump\"):
-			velocity.y -= jump_velcoity
-			animation.play(\"Jump\")
-
-
+			state = JUMP
+		
 func _on_Area2D_body_entered(body):
 	if body is StaticBody2D:
-		can_jump = true 
-		animation.play(\"run\")
-	
-
+		state = RUN 
 
 func _on_Area2D_body_exited(body):
 	if body is StaticBody2D:
-		can_jump = false 
+		state = JUMP
 "
 
 [sub_resource type="Animation" id=4]
@@ -109,7 +117,7 @@ scale = Vector2( 6.03125, 6.03125 )
 texture = ExtResource( 1 )
 hframes = 14
 vframes = 7
-frame = 52
+frame = 35
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Jump = SubResource( 4 )
