@@ -36,5 +36,5 @@ position = Vector2( -3, 559 )
 position = Vector2( -18, 567 )
 
 [node name="Spawner" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1909, 519 )
+position = Vector2( 1911, 573 )
 scenes = [ ExtResource( 12 ), ExtResource( 11 ) ]
