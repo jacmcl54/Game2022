@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://bgfg/background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bgfg/foreground.tscn" type="PackedScene" id=2]
@@ -10,8 +10,6 @@
 [ext_resource path="res://scene/Backgrounds/Para5.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scene/player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://spawners/Spawner.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scene/items/item.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scene/obstacles/Obstacle.tscn" type="PackedScene" id=12]
 
 [node name="game" type="Node2D"]
 
@@ -37,4 +35,3 @@ position = Vector2( -18, 567 )
 
 [node name="Spawner" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1911, 573 )
-scenes = [ ExtResource( 12 ), ExtResource( 11 ) ]
