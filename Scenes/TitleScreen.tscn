@@ -1,16 +1,21 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/BootScreen&TitleScreenAssests/game_logo_white_text (1).png" type="Texture" id=2]
 [ext_resource path="res://Assets/Buttons/ContinueButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Buttons/OptionsButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Buttons/NewGameButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/BootScreen&TitleScreenAssests/Fox.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 7 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade in"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("FadeIn:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +31,7 @@ tracks/0/keys = {
 resource_name = "Fade out"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("FadeIn:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -41,7 +46,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("FadeIn:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -78,30 +83,59 @@ stretch_mode = 4
 [node name="CentreRow" type="HBoxContainer" parent="Menu"]
 margin_top = 103.0
 margin_right = 784.0
-margin_bottom = 440.0
+margin_bottom = 323.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CentreRow"]
-margin_right = 784.0
-margin_bottom = 337.0
+margin_right = 390.0
+margin_bottom = 220.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
 
 [node name="NewGameButton" parent="Menu/CentreRow/Buttons" instance=ExtResource( 5 )]
+margin_right = 390.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 360, 60 )
 
 [node name="ContinueButton" parent="Menu/CentreRow/Buttons" instance=ExtResource( 3 )]
-margin_top = 64.0
-margin_bottom = 124.0
+margin_top = 80.0
+margin_right = 390.0
+margin_bottom = 140.0
 rect_min_size = Vector2( 360, 60 )
 
 [node name="OptionsButton" parent="Menu/CentreRow/Buttons" instance=ExtResource( 4 )]
-margin_top = 128.0
-margin_bottom = 188.0
+margin_top = 160.0
+margin_right = 390.0
+margin_bottom = 220.0
 rect_min_size = Vector2( 360, 60 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CentreRow"]
+margin_left = 394.0
+margin_right = 784.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Charcters" type="TextureRect" parent="Menu/CentreRow/CenterContainer"]
+margin_left = 104.0
+margin_top = 32.0
+margin_right = 285.0
+margin_bottom = 187.0
+texture = ExtResource( 6 )
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 327.0
+margin_right = 784.0
+margin_bottom = 440.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+text = "Version 0.0.0
+Created by Caleb & Jack"
+valign = 2
+
+[node name="FadeIn" type="ColorRect" parent="."]
 margin_right = 1022.0
 margin_bottom = 599.0
 color = Color( 0, 0, 0, 1 )
@@ -111,6 +145,6 @@ color = Color( 0, 0, 0, 1 )
 "anims/Fade out" = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
-[node name="video at 1224" type="Control" parent="."]
+[node name="video at 2436" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
