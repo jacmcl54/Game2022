@@ -22,4 +22,7 @@ texture = ExtResource( 1 )
 position = Vector2( 21.5, -25.5 )
 shape = SubResource( 1 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
 [connection signal="body_entered" from="effectDamage" to="." method="_on_effectDamage_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

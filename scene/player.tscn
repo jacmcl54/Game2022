@@ -10,6 +10,8 @@ var velocity = Vector2.ZERO
 export var jump_velcoity = 600
 export var gravity_scale = 20
 
+var score = 0 
+
 enum {
 	JUMP,
 	RUN,
@@ -22,6 +24,11 @@ var state = RUN
 onready var animation = $AnimationPlayer
 
 	
+func _ready():
+	Signals.connect(\"rewardplayer\", self, \"rewardplayer\")
+	
+
+
 func _physics_process(delta):
 	match state:
 		RUN:
@@ -49,6 +56,10 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body is StaticBody2D:
 		state = JUMP
+
+func rewardplayer(scoretoadd):
+	score+=scoretoadd
+	print(score)
 "
 
 [sub_resource type="Animation" id=4]
@@ -117,7 +128,7 @@ scale = Vector2( 6.03125, 6.03125 )
 texture = ExtResource( 1 )
 hframes = 14
 vframes = 7
-frame = 52
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Jump = SubResource( 4 )
