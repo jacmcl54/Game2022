@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://bgfg/background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bgfg/foreground.tscn" type="PackedScene" id=2]
@@ -10,8 +10,10 @@
 [ext_resource path="res://scene/Backgrounds/Para5.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scene/player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://spawners/Spawner.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scene/UI/ScoreUi.tscn" type="PackedScene" id=11]
 
 [node name="game" type="Node2D"]
+position = Vector2( -1, -4 )
 
 [node name="background" parent="." instance=ExtResource( 1 )]
 
@@ -31,7 +33,11 @@
 position = Vector2( -3, 559 )
 
 [node name="player" parent="." instance=ExtResource( 9 )]
-position = Vector2( -18, 567 )
+position = Vector2( 140, 567 )
 
 [node name="Spawner" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1911, 573 )
+
+[node name="ScoreUi" parent="." instance=ExtResource( 11 )]
+margin_right = 0.0
+margin_bottom = 0.0

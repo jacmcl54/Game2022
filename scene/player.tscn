@@ -26,6 +26,7 @@ onready var animation = $AnimationPlayer
 	
 func _ready():
 	Signals.connect(\"rewardplayer\", self, \"rewardplayer\")
+	Signals.connect(\"killplayer\", self, \"killplayer\")
 	
 
 
@@ -59,7 +60,12 @@ func _on_Area2D_body_exited(body):
 
 func rewardplayer(scoretoadd):
 	score+=scoretoadd
-	print(score)
+	Signals.emit_signal(\"udaptesscore\", score)
+	
+	
+	
+func killplayer():
+	queue_free()
 "
 
 [sub_resource type="Animation" id=4]
@@ -128,7 +134,7 @@ scale = Vector2( 6.03125, 6.03125 )
 texture = ExtResource( 1 )
 hframes = 14
 vframes = 7
-frame = 4
+frame = 50
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Jump = SubResource( 4 )

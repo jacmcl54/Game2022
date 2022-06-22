@@ -6,7 +6,8 @@ func _physics_process(delta):
 
 func _on_effectDamage_body_entered(body):
 	if body.name == "player":
-		print("death")
+		Signals.emit_signal("killplayer")
+		queue_free()
 	
 
 
