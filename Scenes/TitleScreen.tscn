@@ -145,7 +145,6 @@ Created by Caleb & Jack"
 valign = 2
 
 [node name="FadeIn" type="ColorRect" parent="."]
-visible = false
 margin_right = 1022.0
 margin_bottom = 599.0
 color = Color( 0, 0, 0, 1 )
