@@ -145,6 +145,7 @@ Created by Caleb & Jack"
 valign = 2
 
 [node name="FadeIn" type="ColorRect" parent="."]
+visible = false
 margin_right = 1022.0
 margin_bottom = 599.0
 color = Color( 0, 0, 0, 1 )
@@ -154,6 +155,4 @@ color = Color( 0, 0, 0, 1 )
 "anims/Fade out" = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
-[node name="video at 2436" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[connection signal="pressed" from="Menu/CentreRow/Buttons/QuitButton" to="Menu/CentreRow/Buttons/QuitButton" method="_on_QuitButton_pressed"]
