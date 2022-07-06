@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/BootScreen&TitleScreenAssests/game_logo_white_text (1).png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/BootScreen&TitleScreenAssests/Fox.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Assets/Backgrounds/Grassy_Mountains_Parallax_Background-vnitti/Grassy_Mountains_Parallax_Background-vnitti/Grassy_Mountains_preview.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Audio/Kalimba.mp3" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 7 )
@@ -145,14 +146,19 @@ Created by Caleb & Jack"
 valign = 2
 
 [node name="FadeIn" type="ColorRect" parent="."]
-visible = false
-margin_right = 1022.0
-margin_bottom = 599.0
+margin_left = -93.0
+margin_top = -33.0
+margin_right = 1157.0
+margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Fade in" = SubResource( 1 )
 "anims/Fade out" = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
 
 [connection signal="pressed" from="Menu/CentreRow/Buttons/QuitButton" to="Menu/CentreRow/Buttons/QuitButton" method="_on_QuitButton_pressed"]
