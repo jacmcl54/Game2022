@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/RichTextLabel.gd" type="Script" id=1]
+[ext_resource path="res://assets/Froots N Veggies.png" type="Texture" id=2]
+[ext_resource path="res://assets/Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_mid_fc.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/Montserrat-ExtraBold.ttf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 120
+size = 40
+outline_size = 2
+outline_color = Color( 0.14902, 0.168627, 0.266667, 1 )
 font_data = SubResource( 1 )
 
 [node name="ScoreUi" type="Control"]
@@ -16,11 +20,24 @@ margin_right = -1024.0
 margin_bottom = -600.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 54.0
-margin_top = -11.0
-margin_right = 423.0
-margin_bottom = 364.0
+margin_left = 23.0
+margin_top = 10.0
+margin_right = 611.0
+margin_bottom = 428.0
 custom_fonts/normal_font = SubResource( 2 )
-text = "0
+text = " 0
 "
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 82, 37 )
+scale = Vector2( 2.20313, 2.20313 )
+texture = ExtResource( 2 )
+hframes = 8
+vframes = 8
+frame = 19
+
+[node name="CloudsMidFc" type="Sprite" parent="."]
+position = Vector2( 68, 39 )
+scale = Vector2( 0.351852, 0.351852 )
+texture = ExtResource( 3 )
