@@ -7,7 +7,7 @@ script/source = "extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 
-export var jump_velcoity = 600
+export var jump_velcoity = 650
 export var gravity_scale = 22
 
 var score = 0 
@@ -66,7 +66,6 @@ func rewardplayer(scoretoadd):
 	
 func killplayer():
 	queue_free()
-
 "
 
 [sub_resource type="Animation" id=4]
@@ -135,7 +134,7 @@ scale = Vector2( 6.03125, 6.03125 )
 texture = ExtResource( 1 )
 hframes = 14
 vframes = 7
-frame = 50
+frame = 43
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Jump = SubResource( 4 )
