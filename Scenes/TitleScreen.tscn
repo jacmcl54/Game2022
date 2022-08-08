@@ -146,6 +146,7 @@ Created by Caleb & Jack"
 valign = 2
 
 [node name="FadeIn" type="ColorRect" parent="."]
+visible = false
 margin_left = -93.0
 margin_top = -33.0
 margin_right = 1157.0
@@ -159,6 +160,7 @@ anims/RESET = SubResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+pitch_scale = 1.2
 autoplay = true
 
 [connection signal="pressed" from="Menu/CentreRow/Buttons/QuitButton" to="Menu/CentreRow/Buttons/QuitButton" method="_on_QuitButton_pressed"]
