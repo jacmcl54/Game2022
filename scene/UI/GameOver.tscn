@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://scripts/GameOver.gd" type="Script" id=1]
-[ext_resource path="res://assets/Grassy_Mountains_Parallax_Background-vnitti/Grassy_Mountains_preview_fullcolor.png" type="Texture" id=2]
 
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
@@ -15,7 +14,6 @@ margin_left = 368.0
 margin_top = 257.0
 margin_right = 608.0
 margin_bottom = 349.0
-text = "Restart "
-icon = ExtResource( 2 )
+text = "Restart  "
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
