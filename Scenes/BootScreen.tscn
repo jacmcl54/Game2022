@@ -59,10 +59,10 @@ scale = Vector2( 1.00586, 0.996667 )
 texture = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -57.0
-margin_top = -33.0
-margin_right = 1151.0
-margin_bottom = 705.0
+margin_left = -61.0
+margin_top = -39.0
+margin_right = 1147.0
+margin_bottom = 699.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
